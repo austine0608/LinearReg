@@ -32,12 +32,11 @@ st.write(
 
 st.subheader("Make a prediction")
 
-number = st.slider(
-    f"Choose a value for {x_column}:",
-    float(X.min()),
-    float(X.max()), 
-    float(X.mean()),
-) 
+x_value = st.slider(
+    f"Select a value for {x_feature}:",
+    float(df[x_feature].min()),
+    float(df[x_feature].max())
+)
 
 answer = model.predict([[number]])[0] 
 
